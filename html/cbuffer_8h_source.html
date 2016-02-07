@@ -1,0 +1,444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Buffer circolare di elementi, Tollari Mattia 780878:  File sorgente cbuffer.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Buffer circolare di elementi, Tollari Mattia 780878
+   </div>
+   <div id="projectbrief">Classe che implementa un vettore circolare di oggetti generici</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Pagina&#160;Principale</span></a></li>
+      <li><a href="annotated.html"><span>Classi</span></a></li>
+      <li class="current"><a href="files.html"><span>File</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Elenco&#160;dei&#160;file</span></a></li>
+      <li><a href="globals.html"><span>Elementi&#160;dei&#160;file</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">cbuffer.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="cbuffer_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CBUFFER_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define CBUFFER_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="node_8h.html">node.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="exceptions_8h.html">exceptions.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classcbuffer.html">   15</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="classcbuffer.html">cbuffer</a> </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">//PUBLIC</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classcbuffer.html#a190605e289504031f38e353dd60d9ec9">   22</a></span>&#160;    <a class="code" href="classcbuffer.html#a190605e289504031f38e353dd60d9ec9">cbuffer</a>()</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a> = 0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classcbuffer.html#a2bd85304337fb65213771c0acb10bbb7">_end</a> = 0;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="classcbuffer.html#a335738f946012f748b077711ceccc9bf">_nEle</a> = 0;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="classcbuffer.html#a7a030eeb211faeeb177dbe0cbe177107">_dim</a> = 1;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment">// Genero il tutto</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classcbuffer.html#a7ca17f1f9c208342d3d0b5d3a741b255">create</a>(1);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classcbuffer.html#ab547060c86ece8807d0a695939625434">   33</a></span>&#160;    <a class="code" href="classcbuffer.html#ab547060c86ece8807d0a695939625434">cbuffer</a>(<span class="keywordtype">int</span> _app)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a> = 0;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classcbuffer.html#a2bd85304337fb65213771c0acb10bbb7">_end</a> = 0;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="classcbuffer.html#a335738f946012f748b077711ceccc9bf">_nEle</a> = 0;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classcbuffer.html#a7a030eeb211faeeb177dbe0cbe177107">_dim</a> = _app;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="comment">// Genero il tutto</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classcbuffer.html#a7ca17f1f9c208342d3d0b5d3a741b255">create</a>(_app);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classcbuffer.html#a9b8da4ed9c9ed3c46d09bf4f64ead2fb">   44</a></span>&#160;    <a class="code" href="classcbuffer.html#a9b8da4ed9c9ed3c46d09bf4f64ead2fb">~cbuffer</a>()</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="struct_node.html">Node&lt;T&gt;</a> *_app = <a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="struct_node.html">Node&lt;T&gt;</a> *_app2 = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt;= <a class="code" href="classcbuffer.html#a7a030eeb211faeeb177dbe0cbe177107">_dim</a>; i++) </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            _app2 = _app-&gt;<a class="code" href="struct_node.html#ac1c0563946c59c36bddde431b4adb00b">next</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">delete</span> _app;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            _app = _app2;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classcbuffer.html#a26f4c26e1dd0b0ff2bc0091cfdbeaf70">   58</a></span>&#160;    <a class="code" href="classcbuffer.html#a26f4c26e1dd0b0ff2bc0091cfdbeaf70">cbuffer</a>(<span class="keyword">const</span> <a class="code" href="classcbuffer.html">cbuffer</a> &amp;oth)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a> = <span class="keyword">new</span> <a class="code" href="struct_node.html">Node&lt;T&gt;</a>(oth.<a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a>-&gt;value.value());</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="struct_node.html">Node&lt;T&gt;</a> *_app = <a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="struct_node.html">Node&lt;T&gt;</a> *_app2 = oth.<a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a>-&gt;next;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="classcbuffer.html#a7a030eeb211faeeb177dbe0cbe177107">_dim</a>; i++)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            _app-&gt;<a class="code" href="struct_node.html#ac1c0563946c59c36bddde431b4adb00b">next</a> = <span class="keyword">new</span> <a class="code" href="struct_node.html">Node&lt;T&gt;</a>(_app2-&gt;<a class="code" href="struct_node.html#a6575c8a5b10d12e8e7f9d547bf2d0046">value</a>.value());</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            _app = _app-&gt;<a class="code" href="struct_node.html#ac1c0563946c59c36bddde431b4adb00b">next</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            _app2 = _app2-&gt;<a class="code" href="struct_node.html#ac1c0563946c59c36bddde431b4adb00b">next</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        _app-&gt;<a class="code" href="struct_node.html#ac1c0563946c59c36bddde431b4adb00b">next</a> = <a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="classcbuffer.html#a2bd85304337fb65213771c0acb10bbb7">_end</a> = _app;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classcbuffer.html#a01b86cc90e540b1b7a77ec54c5f2bb00">   77</a></span>&#160;    <a class="code" href="classcbuffer.html">cbuffer</a> &amp;<a class="code" href="classcbuffer.html#a01b86cc90e540b1b7a77ec54c5f2bb00">operator = </a>(<span class="keyword">const</span> <a class="code" href="classcbuffer.html">cbuffer</a> &amp;oth) </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;oth) </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="classcbuffer.html">cbuffer&lt;T&gt;</a> _app(oth);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            std::swap(this-&gt;<a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a>, _app.<a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            std::swap(this-&gt;<a class="code" href="classcbuffer.html#a2bd85304337fb65213771c0acb10bbb7">_end</a>, _app.<a class="code" href="classcbuffer.html#a2bd85304337fb65213771c0acb10bbb7">_end</a>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            std::swap(this-&gt;<a class="code" href="classcbuffer.html#a335738f946012f748b077711ceccc9bf">_nEle</a>, _app.<a class="code" href="classcbuffer.html#a335738f946012f748b077711ceccc9bf">_nEle</a>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            std::swap(this-&gt;<a class="code" href="classcbuffer.html#a7a030eeb211faeeb177dbe0cbe177107">_dim</a>, _app.<a class="code" href="classcbuffer.html#a7a030eeb211faeeb177dbe0cbe177107">_dim</a>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classcbuffer.html#a4432267bda219bf8ded5bbf180e75ee6">   95</a></span>&#160;    T &amp;<a class="code" href="classcbuffer.html#a4432267bda219bf8ded5bbf180e75ee6">operator [] </a>(<span class="keyword">const</span> <span class="keywordtype">int</span> _index) </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">if</span>(_index &lt; <a class="code" href="classcbuffer.html#a335738f946012f748b077711ceccc9bf">_nEle</a>) </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <a class="code" href="struct_node.html">Node&lt;T&gt;</a> *_app = <a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i != _index; i++) </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                _app = _app-&gt;<a class="code" href="struct_node.html#ac1c0563946c59c36bddde431b4adb00b">next</a>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">return</span> _app-&gt;<a class="code" href="struct_node.html#a6575c8a5b10d12e8e7f9d547bf2d0046">value</a>.value();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classindex_out_of_bound.html">indexOutOfBound</a>(<span class="stringliteral">&quot;Error: Index out of bound.&quot;</span>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    </div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classcbuffer.html#aa90d865a25e0acf87293c1b74b70667a">  116</a></span>&#160;    <span class="keyword">const</span> T &amp;<a class="code" href="classcbuffer.html#aa90d865a25e0acf87293c1b74b70667a">operator[]</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> _index)<span class="keyword"> const </span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">if</span>(_index &lt; <a class="code" href="classcbuffer.html#a335738f946012f748b077711ceccc9bf">_nEle</a>) </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <a class="code" href="struct_node.html">Node&lt;T&gt;</a> *_app = <a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i != _index; i++) </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                _app = _app-&gt;<a class="code" href="struct_node.html#ac1c0563946c59c36bddde431b4adb00b">next</a>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keywordflow">return</span> _app-&gt;<a class="code" href="struct_node.html#a6575c8a5b10d12e8e7f9d547bf2d0046">value</a>.value();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classindex_out_of_bound.html">indexOutOfBound</a>(<span class="stringliteral">&quot;Error: Index out of bound.&quot;</span>);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    </div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="classcbuffer.html#ad4d17ef78468540bf181cd25e5730e79">  135</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcbuffer.html#ad4d17ef78468540bf181cd25e5730e79">add</a>(<span class="keyword">const</span> T &amp;value) </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classcbuffer.html#a335738f946012f748b077711ceccc9bf">_nEle</a> == <a class="code" href="classcbuffer.html#a7a030eeb211faeeb177dbe0cbe177107">_dim</a>) </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a> = <a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a>-&gt;next;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <a class="code" href="classcbuffer.html#a2bd85304337fb65213771c0acb10bbb7">_end</a>-&gt;value.value() = value;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <a class="code" href="classcbuffer.html#a2bd85304337fb65213771c0acb10bbb7">_end</a> = <a class="code" href="classcbuffer.html#a2bd85304337fb65213771c0acb10bbb7">_end</a>-&gt;next;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <a class="code" href="classcbuffer.html#a2bd85304337fb65213771c0acb10bbb7">_end</a>-&gt;value.value() = value;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <a class="code" href="classcbuffer.html#a2bd85304337fb65213771c0acb10bbb7">_end</a> = <a class="code" href="classcbuffer.html#a2bd85304337fb65213771c0acb10bbb7">_end</a>-&gt;next;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <a class="code" href="classcbuffer.html#a335738f946012f748b077711ceccc9bf">_nEle</a>++;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    </div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="classcbuffer.html#af5c6de145f2241e5d0c32ccf1c19b79d">  153</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcbuffer.html#af5c6de145f2241e5d0c32ccf1c19b79d">del</a>() </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classcbuffer.html#a335738f946012f748b077711ceccc9bf">_nEle</a> != 0) </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a>-&gt;value.value() = 0;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a> = <a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a>-&gt;next;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <a class="code" href="classcbuffer.html#a335738f946012f748b077711ceccc9bf">_nEle</a>--;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classempty_buffer.html">emptyBuffer</a>(<span class="stringliteral">&quot;Error: Buffer already empty.&quot;</span>);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    </div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="classcbuffer.html#aad938f68ff9b7989a21243052d682a22">  167</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classcbuffer.html#aad938f68ff9b7989a21243052d682a22">nEle</a>() </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classcbuffer.html#a335738f946012f748b077711ceccc9bf">_nEle</a>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    </div>
+<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="classcbuffer.html#a4ab8a82643243c7d4da2fb4266069848">  174</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classcbuffer.html#a4ab8a82643243c7d4da2fb4266069848">dim</a>()</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classcbuffer.html#a7a030eeb211faeeb177dbe0cbe177107">_dim</a>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    </div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="classcbuffer_1_1_iterator.html">  181</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classcbuffer_1_1_iterator.html">Iterator</a></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    {</div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="classcbuffer_1_1_iterator.html#a9535e45f14d885168cab4f35d3bb0c88">  183</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="struct_node.html">Node&lt;T&gt;</a> *<a class="code" href="classcbuffer_1_1_iterator.html#a9535e45f14d885168cab4f35d3bb0c88">node</a>; </div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="classcbuffer_1_1_iterator.html#a8eb10b94266248047493eed92b93d09c">  184</a></span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classcbuffer.html">cbuffer</a>; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="comment">//PUBLIC</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        </div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="classcbuffer_1_1_iterator.html#aabfc2987207f6305f429b449bc8e1821">  190</a></span>&#160;        <span class="keyword">typedef</span> std::forward_iterator_tag <a class="code" href="classcbuffer_1_1_iterator.html#aabfc2987207f6305f429b449bc8e1821">iterator_category</a>;</div>
+<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="classcbuffer_1_1_iterator.html#a61d1ffd8c33476b986fb50431bb6fb78">  191</a></span>&#160;        <span class="keyword">typedef</span> <a class="code" href="struct_node.html">Node&lt;T&gt;</a> <a class="code" href="classcbuffer_1_1_iterator.html#a61d1ffd8c33476b986fb50431bb6fb78">value_type</a>;</div>
+<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="classcbuffer_1_1_iterator.html#a926ba4198775a80bdf94c9f403540a59">  192</a></span>&#160;        <span class="keyword">typedef</span> <span class="keyword">const</span> <a class="code" href="class_value.html">Value&lt;T&gt;</a>* <a class="code" href="classcbuffer_1_1_iterator.html#a926ba4198775a80bdf94c9f403540a59">pointer</a>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="classcbuffer_1_1_iterator.html#a04ba5ff5b12e86e9aafea9d9d6e0e1d8">  193</a></span>&#160;        <span class="keyword">typedef</span> <span class="keyword">const</span> <a class="code" href="class_value.html">Value&lt;T&gt;</a>&amp; <a class="code" href="classcbuffer_1_1_iterator.html#a04ba5ff5b12e86e9aafea9d9d6e0e1d8">reference</a>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        </div>
+<div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="classcbuffer_1_1_iterator.html#abeb6e8e60b5dd646bf9dfc08d5c9aaed">  196</a></span>&#160;        <a class="code" href="classcbuffer_1_1_iterator.html#abeb6e8e60b5dd646bf9dfc08d5c9aaed">Iterator</a>()</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            node = 0;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        </div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="classcbuffer_1_1_iterator.html#af7097d625133cddf916c21581da5b4d0">  202</a></span>&#160;        <a class="code" href="classcbuffer_1_1_iterator.html#af7097d625133cddf916c21581da5b4d0">~Iterator</a>() </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        </div>
+<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="classcbuffer_1_1_iterator.html#aaa7499851296f853bfea41e7566c59f1">  208</a></span>&#160;        <a class="code" href="classcbuffer_1_1_iterator.html#aaa7499851296f853bfea41e7566c59f1">Iterator</a>(<span class="keyword">const</span> <a class="code" href="classcbuffer_1_1_iterator.html">Iterator</a> &amp;oth)</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            node = oth.<a class="code" href="classcbuffer_1_1_iterator.html#a9535e45f14d885168cab4f35d3bb0c88">node</a>;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        </div>
+<div class="line"><a name="l00216"></a><span class="lineno"><a class="line" href="classcbuffer_1_1_iterator.html#aed7a7e628502fc9fb3772c0308572bcc">  216</a></span>&#160;        <a class="code" href="classcbuffer_1_1_iterator.html">Iterator</a> &amp;<a class="code" href="classcbuffer_1_1_iterator.html#aed7a7e628502fc9fb3772c0308572bcc">operator=</a>(<span class="keyword">const</span> <a class="code" href="classcbuffer_1_1_iterator.html">Iterator</a> &amp;oth) </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        {</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;oth) </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                <a class="code" href="classcbuffer_1_1_iterator.html">Iterator</a> _app(oth);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                std::swap(this-&gt;node, _app.<a class="code" href="classcbuffer_1_1_iterator.html#a9535e45f14d885168cab4f35d3bb0c88">node</a>);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            }</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        }</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        </div>
+<div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="classcbuffer_1_1_iterator.html#a08a168fddb34e1b99a90d9a390a75c23">  229</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="class_value.html">Value&lt;T&gt;</a> &amp;<a class="code" href="classcbuffer_1_1_iterator.html#a08a168fddb34e1b99a90d9a390a75c23">operator* </a>()<span class="keyword"> const </span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <span class="keywordflow">return</span> node-&gt;<a class="code" href="struct_node.html#a6575c8a5b10d12e8e7f9d547bf2d0046">value</a>;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        }</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        </div>
+<div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="classcbuffer_1_1_iterator.html#ae9e9a7aba89277f7a3a0db0b01ba6d4b">  236</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="class_value.html">Value&lt;T&gt;</a> *<a class="code" href="classcbuffer_1_1_iterator.html#ae9e9a7aba89277f7a3a0db0b01ba6d4b">operator-&gt; </a>()<span class="keyword"> const </span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            <span class="keywordflow">return</span> &amp;(node-&gt;<a class="code" href="struct_node.html#a6575c8a5b10d12e8e7f9d547bf2d0046">value</a>);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        }</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        </div>
+<div class="line"><a name="l00243"></a><span class="lineno"><a class="line" href="classcbuffer_1_1_iterator.html#ab44d16305712948162117487bed7e362">  243</a></span>&#160;        <a class="code" href="classcbuffer_1_1_iterator.html">Iterator</a> <a class="code" href="classcbuffer_1_1_iterator.html#ab44d16305712948162117487bed7e362">operator++</a>(<span class="keywordtype">int</span>) </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <a class="code" href="classcbuffer_1_1_iterator.html">Iterator</a> _app(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            node = node-&gt;<a class="code" href="struct_node.html#ac1c0563946c59c36bddde431b4adb00b">next</a>;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordflow">return</span> _app;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        }</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        </div>
+<div class="line"><a name="l00252"></a><span class="lineno"><a class="line" href="classcbuffer_1_1_iterator.html#ae4951a4904c6277dd935aad8448adb1e">  252</a></span>&#160;        <a class="code" href="classcbuffer_1_1_iterator.html">Iterator</a> &amp;<a class="code" href="classcbuffer_1_1_iterator.html#ae4951a4904c6277dd935aad8448adb1e">operator++ </a>() </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        {</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            node = node-&gt;<a class="code" href="struct_node.html#ac1c0563946c59c36bddde431b4adb00b">next</a>;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        </div>
+<div class="line"><a name="l00262"></a><span class="lineno"><a class="line" href="classcbuffer_1_1_iterator.html#abdcf6e5afc837e2ad92f9de8048d0cec">  262</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classcbuffer_1_1_iterator.html#abdcf6e5afc837e2ad92f9de8048d0cec">operator==</a>(<span class="keyword">const</span> <a class="code" href="classcbuffer_1_1_iterator.html">Iterator</a> &amp;oth)<span class="keyword"> const </span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <span class="keywordflow">return</span> node == oth.<a class="code" href="classcbuffer_1_1_iterator.html#a9535e45f14d885168cab4f35d3bb0c88">node</a>;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        }</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        </div>
+<div class="line"><a name="l00271"></a><span class="lineno"><a class="line" href="classcbuffer_1_1_iterator.html#ac7df7eb4cfcd7c7d745ef2a0cc74332a">  271</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classcbuffer_1_1_iterator.html#ac7df7eb4cfcd7c7d745ef2a0cc74332a">operator!= </a>(<span class="keyword">const</span> <a class="code" href="classcbuffer_1_1_iterator.html">Iterator</a> &amp;oth)<span class="keyword"> const </span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keywordflow">return</span> node != oth.<a class="code" href="classcbuffer_1_1_iterator.html#a9535e45f14d885168cab4f35d3bb0c88">node</a>;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        }</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        </div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="comment">//PRIVATE</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        </div>
+<div class="line"><a name="l00283"></a><span class="lineno"><a class="line" href="classcbuffer_1_1_iterator.html#aedcdd4322318564b480ca07cd56bbda6">  283</a></span>&#160;        <a class="code" href="classcbuffer_1_1_iterator.html#aedcdd4322318564b480ca07cd56bbda6">Iterator</a>(<span class="keyword">const</span> <a class="code" href="struct_node.html">Node&lt;T&gt;</a> *_node) : node(_node) </div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        {</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        }</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    };</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    </div>
+<div class="line"><a name="l00291"></a><span class="lineno"><a class="line" href="classcbuffer.html#aa80a4c508446fb894b336457c9a522ec">  291</a></span>&#160;    <a class="code" href="classcbuffer_1_1_iterator.html">Iterator</a> <a class="code" href="classcbuffer.html#aa80a4c508446fb894b336457c9a522ec">begin</a>()<span class="keyword"> const </span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classcbuffer_1_1_iterator.html">Iterator</a>(<a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a>);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    </div>
+<div class="line"><a name="l00298"></a><span class="lineno"><a class="line" href="classcbuffer.html#a6cf9c30f14e835822b5b46da0f1320c0">  298</a></span>&#160;    <a class="code" href="classcbuffer_1_1_iterator.html">Iterator</a> <a class="code" href="classcbuffer.html#a6cf9c30f14e835822b5b46da0f1320c0">end</a>()<span class="keyword"> const </span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classcbuffer_1_1_iterator.html">Iterator</a>(<a class="code" href="classcbuffer.html#a2bd85304337fb65213771c0acb10bbb7">_end</a>);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    }</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="comment">//PRIVATE</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00306"></a><span class="lineno"><a class="line" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">  306</a></span>&#160;    <a class="code" href="struct_node.html">Node&lt;T&gt;</a> *<a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a>; </div>
+<div class="line"><a name="l00307"></a><span class="lineno"><a class="line" href="classcbuffer.html#a2bd85304337fb65213771c0acb10bbb7">  307</a></span>&#160;    <a class="code" href="struct_node.html">Node&lt;T&gt;</a> *<a class="code" href="classcbuffer.html#a2bd85304337fb65213771c0acb10bbb7">_end</a>; </div>
+<div class="line"><a name="l00308"></a><span class="lineno"><a class="line" href="classcbuffer.html#a335738f946012f748b077711ceccc9bf">  308</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classcbuffer.html#a335738f946012f748b077711ceccc9bf">_nEle</a>; </div>
+<div class="line"><a name="l00309"></a><span class="lineno"><a class="line" href="classcbuffer.html#a7a030eeb211faeeb177dbe0cbe177107">  309</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classcbuffer.html#a7a030eeb211faeeb177dbe0cbe177107">_dim</a>; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    </div>
+<div class="line"><a name="l00314"></a><span class="lineno"><a class="line" href="classcbuffer.html#a7ca17f1f9c208342d3d0b5d3a741b255">  314</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcbuffer.html#a7ca17f1f9c208342d3d0b5d3a741b255">create</a> (<span class="keywordtype">int</span> _dim)</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    {</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keywordflow">if</span> (_dim &gt;=1)</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        {</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            _begin = <span class="keyword">new</span> <a class="code" href="struct_node.html">Node&lt;T&gt;</a>();</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            _end = <a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a>;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            <a class="code" href="struct_node.html">Node&lt;T&gt;</a> *_app = <a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a>;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="classcbuffer.html#a7a030eeb211faeeb177dbe0cbe177107">_dim</a>; i++)</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            {</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                _app-&gt;<a class="code" href="struct_node.html#ac1c0563946c59c36bddde431b4adb00b">next</a> = <span class="keyword">new</span> <a class="code" href="struct_node.html">Node&lt;T&gt;</a>();</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                _app = _app-&gt;<a class="code" href="struct_node.html#ac1c0563946c59c36bddde431b4adb00b">next</a>;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            }</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            _app-&gt;<a class="code" href="struct_node.html#ac1c0563946c59c36bddde431b4adb00b">next</a> = <a class="code" href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">_begin</a>;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        }</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">throw</span> <a class="code" href="classerror_n_ele.html">errorNEle</a>(<span class="stringliteral">&quot;Error: The buffer size must be greather than 0&quot;</span>);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    }</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;};</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;</div>
+<div class="line"><a name="l00339"></a><span class="lineno"><a class="line" href="cbuffer_8h.html#afd6a8b753f9e403327b723a2a292c62e">  339</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; std::ostream &amp;operator&lt;&lt;(std::ostream &amp;oS, cbuffer&lt;T&gt; &amp;buf) </div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;{</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keyword">typename</span> <a class="code" href="classcbuffer_1_1_iterator.html">cbuffer&lt;T&gt;::Iterator</a> iter;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    oS &lt;&lt; <span class="stringliteral">&quot;[&quot;</span>;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keywordflow">for</span>(iter = buf.begin(); iter != buf.end(); iter++) </div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    {</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="keywordflow">if</span>(iter != buf.begin()) </div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        {</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            oS &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        }</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        oS &lt;&lt; iter-&gt;value();</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    }</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    oS &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="keywordflow">return</span> oS;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;}</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;</div>
+<div class="line"><a name="l00360"></a><span class="lineno"><a class="line" href="cbuffer_8h.html#aeecd38d4c9f3272109a2222b0868de98">  360</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> P&gt; <span class="keywordtype">void</span> <a class="code" href="cbuffer_8h.html#aeecd38d4c9f3272109a2222b0868de98">check</a>(<a class="code" href="classcbuffer.html">cbuffer&lt;T&gt;</a> &amp;buf, P &amp;pred) </div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;{</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keyword">typename</span> <a class="code" href="classcbuffer_1_1_iterator.html">cbuffer&lt;T&gt;::Iterator</a> bu;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordflow">for</span>(bu = buf.<a class="code" href="classcbuffer.html#aa80a4c508446fb894b336457c9a522ec">begin</a>(), i = 0; bu != buf.<a class="code" href="classcbuffer.html#a6cf9c30f14e835822b5b46da0f1320c0">end</a>(); bu++, i++) </div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    {</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keywordflow">if</span>(pred(bu-&gt;value())) </div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        {</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            std::cout &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: true&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        }</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        {</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            std::cout &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: false&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        }</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    }</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;}</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classcbuffer_1_1_iterator_html_ac7df7eb4cfcd7c7d745ef2a0cc74332a"><div class="ttname"><a href="classcbuffer_1_1_iterator.html#ac7df7eb4cfcd7c7d745ef2a0cc74332a">cbuffer::Iterator::operator!=</a></div><div class="ttdeci">bool operator!=(const Iterator &amp;oth) const </div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00271">cbuffer.h:271</a></div></div>
+<div class="ttc" id="classcbuffer_1_1_iterator_html_ab44d16305712948162117487bed7e362"><div class="ttname"><a href="classcbuffer_1_1_iterator.html#ab44d16305712948162117487bed7e362">cbuffer::Iterator::operator++</a></div><div class="ttdeci">Iterator operator++(int)</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00243">cbuffer.h:243</a></div></div>
+<div class="ttc" id="classcbuffer_html_aad938f68ff9b7989a21243052d682a22"><div class="ttname"><a href="classcbuffer.html#aad938f68ff9b7989a21243052d682a22">cbuffer::nEle</a></div><div class="ttdeci">int nEle()</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00167">cbuffer.h:167</a></div></div>
+<div class="ttc" id="node_8h_html"><div class="ttname"><a href="node_8h.html">node.h</a></div></div>
+<div class="ttc" id="classcbuffer_html_a2bd85304337fb65213771c0acb10bbb7"><div class="ttname"><a href="classcbuffer.html#a2bd85304337fb65213771c0acb10bbb7">cbuffer::_end</a></div><div class="ttdeci">Node&lt; T &gt; * _end</div><div class="ttdoc">Puntatore al nodo finale. </div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00307">cbuffer.h:307</a></div></div>
+<div class="ttc" id="classcbuffer_1_1_iterator_html_aaa7499851296f853bfea41e7566c59f1"><div class="ttname"><a href="classcbuffer_1_1_iterator.html#aaa7499851296f853bfea41e7566c59f1">cbuffer::Iterator::Iterator</a></div><div class="ttdeci">Iterator(const Iterator &amp;oth)</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00208">cbuffer.h:208</a></div></div>
+<div class="ttc" id="classcbuffer_1_1_iterator_html_aed7a7e628502fc9fb3772c0308572bcc"><div class="ttname"><a href="classcbuffer_1_1_iterator.html#aed7a7e628502fc9fb3772c0308572bcc">cbuffer::Iterator::operator=</a></div><div class="ttdeci">Iterator &amp; operator=(const Iterator &amp;oth)</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00216">cbuffer.h:216</a></div></div>
+<div class="ttc" id="classcbuffer_html_a01b86cc90e540b1b7a77ec54c5f2bb00"><div class="ttname"><a href="classcbuffer.html#a01b86cc90e540b1b7a77ec54c5f2bb00">cbuffer::operator=</a></div><div class="ttdeci">cbuffer &amp; operator=(const cbuffer &amp;oth)</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00077">cbuffer.h:77</a></div></div>
+<div class="ttc" id="struct_node_html_ac1c0563946c59c36bddde431b4adb00b"><div class="ttname"><a href="struct_node.html#ac1c0563946c59c36bddde431b4adb00b">Node::next</a></div><div class="ttdeci">Node * next</div><div class="ttdoc">Puntatore al prossimo nodo. </div><div class="ttdef"><b>Definition:</b> <a href="node_8h_source.html#l00011">node.h:11</a></div></div>
+<div class="ttc" id="classcbuffer_1_1_iterator_html_a9535e45f14d885168cab4f35d3bb0c88"><div class="ttname"><a href="classcbuffer_1_1_iterator.html#a9535e45f14d885168cab4f35d3bb0c88">cbuffer::Iterator::node</a></div><div class="ttdeci">const Node&lt; T &gt; * node</div><div class="ttdoc">nodo </div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00183">cbuffer.h:183</a></div></div>
+<div class="ttc" id="classcbuffer_1_1_iterator_html_a08a168fddb34e1b99a90d9a390a75c23"><div class="ttname"><a href="classcbuffer_1_1_iterator.html#a08a168fddb34e1b99a90d9a390a75c23">cbuffer::Iterator::operator*</a></div><div class="ttdeci">const Value&lt; T &gt; &amp; operator*() const </div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00229">cbuffer.h:229</a></div></div>
+<div class="ttc" id="classerror_n_ele_html"><div class="ttname"><a href="classerror_n_ele.html">errorNEle</a></div><div class="ttdef"><b>Definition:</b> <a href="exceptions_8h_source.html#l00019">exceptions.h:19</a></div></div>
+<div class="ttc" id="classcbuffer_html_aa90d865a25e0acf87293c1b74b70667a"><div class="ttname"><a href="classcbuffer.html#aa90d865a25e0acf87293c1b74b70667a">cbuffer::operator[]</a></div><div class="ttdeci">const T &amp; operator[](const int _index) const </div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00116">cbuffer.h:116</a></div></div>
+<div class="ttc" id="classcbuffer_html_a26f4c26e1dd0b0ff2bc0091cfdbeaf70"><div class="ttname"><a href="classcbuffer.html#a26f4c26e1dd0b0ff2bc0091cfdbeaf70">cbuffer::cbuffer</a></div><div class="ttdeci">cbuffer(const cbuffer &amp;oth)</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00058">cbuffer.h:58</a></div></div>
+<div class="ttc" id="classcbuffer_1_1_iterator_html_abdcf6e5afc837e2ad92f9de8048d0cec"><div class="ttname"><a href="classcbuffer_1_1_iterator.html#abdcf6e5afc837e2ad92f9de8048d0cec">cbuffer::Iterator::operator==</a></div><div class="ttdeci">bool operator==(const Iterator &amp;oth) const </div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00262">cbuffer.h:262</a></div></div>
+<div class="ttc" id="cbuffer_8h_html_aeecd38d4c9f3272109a2222b0868de98"><div class="ttname"><a href="cbuffer_8h.html#aeecd38d4c9f3272109a2222b0868de98">check</a></div><div class="ttdeci">void check(cbuffer&lt; T &gt; &amp;buf, P &amp;pred)</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00360">cbuffer.h:360</a></div></div>
+<div class="ttc" id="classindex_out_of_bound_html"><div class="ttname"><a href="classindex_out_of_bound.html">indexOutOfBound</a></div><div class="ttdef"><b>Definition:</b> <a href="exceptions_8h_source.html#l00031">exceptions.h:31</a></div></div>
+<div class="ttc" id="classcbuffer_1_1_iterator_html_aedcdd4322318564b480ca07cd56bbda6"><div class="ttname"><a href="classcbuffer_1_1_iterator.html#aedcdd4322318564b480ca07cd56bbda6">cbuffer::Iterator::Iterator</a></div><div class="ttdeci">Iterator(const Node&lt; T &gt; *_node)</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00283">cbuffer.h:283</a></div></div>
+<div class="ttc" id="classcbuffer_1_1_iterator_html_ae4951a4904c6277dd935aad8448adb1e"><div class="ttname"><a href="classcbuffer_1_1_iterator.html#ae4951a4904c6277dd935aad8448adb1e">cbuffer::Iterator::operator++</a></div><div class="ttdeci">Iterator &amp; operator++()</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00252">cbuffer.h:252</a></div></div>
+<div class="ttc" id="classcbuffer_html_a335738f946012f748b077711ceccc9bf"><div class="ttname"><a href="classcbuffer.html#a335738f946012f748b077711ceccc9bf">cbuffer::_nEle</a></div><div class="ttdeci">int _nEle</div><div class="ttdoc">Numero di elementi attualmente presenti. </div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00308">cbuffer.h:308</a></div></div>
+<div class="ttc" id="classcbuffer_html_a4432267bda219bf8ded5bbf180e75ee6"><div class="ttname"><a href="classcbuffer.html#a4432267bda219bf8ded5bbf180e75ee6">cbuffer::operator[]</a></div><div class="ttdeci">T &amp; operator[](const int _index)</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00095">cbuffer.h:95</a></div></div>
+<div class="ttc" id="classcbuffer_html_a7ca17f1f9c208342d3d0b5d3a741b255"><div class="ttname"><a href="classcbuffer.html#a7ca17f1f9c208342d3d0b5d3a741b255">cbuffer::create</a></div><div class="ttdeci">void create(int _dim)</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00314">cbuffer.h:314</a></div></div>
+<div class="ttc" id="classcbuffer_html_a7a030eeb211faeeb177dbe0cbe177107"><div class="ttname"><a href="classcbuffer.html#a7a030eeb211faeeb177dbe0cbe177107">cbuffer::_dim</a></div><div class="ttdeci">int _dim</div><div class="ttdoc">Dimensione totale del buffer. </div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00309">cbuffer.h:309</a></div></div>
+<div class="ttc" id="class_value_html"><div class="ttname"><a href="class_value.html">Value</a></div><div class="ttdef"><b>Definition:</b> <a href="value_8h_source.html#l00006">value.h:6</a></div></div>
+<div class="ttc" id="classcbuffer_html_a190605e289504031f38e353dd60d9ec9"><div class="ttname"><a href="classcbuffer.html#a190605e289504031f38e353dd60d9ec9">cbuffer::cbuffer</a></div><div class="ttdeci">cbuffer()</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00022">cbuffer.h:22</a></div></div>
+<div class="ttc" id="classcbuffer_html_a4ab8a82643243c7d4da2fb4266069848"><div class="ttname"><a href="classcbuffer.html#a4ab8a82643243c7d4da2fb4266069848">cbuffer::dim</a></div><div class="ttdeci">int dim()</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00174">cbuffer.h:174</a></div></div>
+<div class="ttc" id="classcbuffer_1_1_iterator_html"><div class="ttname"><a href="classcbuffer_1_1_iterator.html">cbuffer::Iterator</a></div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00181">cbuffer.h:181</a></div></div>
+<div class="ttc" id="classcbuffer_1_1_iterator_html_a04ba5ff5b12e86e9aafea9d9d6e0e1d8"><div class="ttname"><a href="classcbuffer_1_1_iterator.html#a04ba5ff5b12e86e9aafea9d9d6e0e1d8">cbuffer::Iterator::reference</a></div><div class="ttdeci">const Value&lt; T &gt; &amp; reference</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00193">cbuffer.h:193</a></div></div>
+<div class="ttc" id="classcbuffer_1_1_iterator_html_abeb6e8e60b5dd646bf9dfc08d5c9aaed"><div class="ttname"><a href="classcbuffer_1_1_iterator.html#abeb6e8e60b5dd646bf9dfc08d5c9aaed">cbuffer::Iterator::Iterator</a></div><div class="ttdeci">Iterator()</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00196">cbuffer.h:196</a></div></div>
+<div class="ttc" id="classcbuffer_1_1_iterator_html_a926ba4198775a80bdf94c9f403540a59"><div class="ttname"><a href="classcbuffer_1_1_iterator.html#a926ba4198775a80bdf94c9f403540a59">cbuffer::Iterator::pointer</a></div><div class="ttdeci">const Value&lt; T &gt; * pointer</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00192">cbuffer.h:192</a></div></div>
+<div class="ttc" id="exceptions_8h_html"><div class="ttname"><a href="exceptions_8h.html">exceptions.h</a></div></div>
+<div class="ttc" id="classcbuffer_1_1_iterator_html_ae9e9a7aba89277f7a3a0db0b01ba6d4b"><div class="ttname"><a href="classcbuffer_1_1_iterator.html#ae9e9a7aba89277f7a3a0db0b01ba6d4b">cbuffer::Iterator::operator-&gt;</a></div><div class="ttdeci">const Value&lt; T &gt; * operator-&gt;() const </div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00236">cbuffer.h:236</a></div></div>
+<div class="ttc" id="classcbuffer_html_af5c6de145f2241e5d0c32ccf1c19b79d"><div class="ttname"><a href="classcbuffer.html#af5c6de145f2241e5d0c32ccf1c19b79d">cbuffer::del</a></div><div class="ttdeci">void del()</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00153">cbuffer.h:153</a></div></div>
+<div class="ttc" id="classcbuffer_1_1_iterator_html_aabfc2987207f6305f429b449bc8e1821"><div class="ttname"><a href="classcbuffer_1_1_iterator.html#aabfc2987207f6305f429b449bc8e1821">cbuffer::Iterator::iterator_category</a></div><div class="ttdeci">std::forward_iterator_tag iterator_category</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00190">cbuffer.h:190</a></div></div>
+<div class="ttc" id="classempty_buffer_html"><div class="ttname"><a href="classempty_buffer.html">emptyBuffer</a></div><div class="ttdef"><b>Definition:</b> <a href="exceptions_8h_source.html#l00008">exceptions.h:8</a></div></div>
+<div class="ttc" id="classcbuffer_1_1_iterator_html_a61d1ffd8c33476b986fb50431bb6fb78"><div class="ttname"><a href="classcbuffer_1_1_iterator.html#a61d1ffd8c33476b986fb50431bb6fb78">cbuffer::Iterator::value_type</a></div><div class="ttdeci">Node&lt; T &gt; value_type</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00191">cbuffer.h:191</a></div></div>
+<div class="ttc" id="classcbuffer_html_a9b8da4ed9c9ed3c46d09bf4f64ead2fb"><div class="ttname"><a href="classcbuffer.html#a9b8da4ed9c9ed3c46d09bf4f64ead2fb">cbuffer::~cbuffer</a></div><div class="ttdeci">~cbuffer()</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00044">cbuffer.h:44</a></div></div>
+<div class="ttc" id="classcbuffer_html_aa80a4c508446fb894b336457c9a522ec"><div class="ttname"><a href="classcbuffer.html#aa80a4c508446fb894b336457c9a522ec">cbuffer::begin</a></div><div class="ttdeci">Iterator begin() const </div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00291">cbuffer.h:291</a></div></div>
+<div class="ttc" id="classcbuffer_1_1_iterator_html_af7097d625133cddf916c21581da5b4d0"><div class="ttname"><a href="classcbuffer_1_1_iterator.html#af7097d625133cddf916c21581da5b4d0">cbuffer::Iterator::~Iterator</a></div><div class="ttdeci">~Iterator()</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00202">cbuffer.h:202</a></div></div>
+<div class="ttc" id="classcbuffer_html_ad4d17ef78468540bf181cd25e5730e79"><div class="ttname"><a href="classcbuffer.html#ad4d17ef78468540bf181cd25e5730e79">cbuffer::add</a></div><div class="ttdeci">void add(const T &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00135">cbuffer.h:135</a></div></div>
+<div class="ttc" id="struct_node_html_a6575c8a5b10d12e8e7f9d547bf2d0046"><div class="ttname"><a href="struct_node.html#a6575c8a5b10d12e8e7f9d547bf2d0046">Node::value</a></div><div class="ttdeci">Value&lt; T &gt; value</div><div class="ttdoc">Valore del nodo preso da value.h. </div><div class="ttdef"><b>Definition:</b> <a href="node_8h_source.html#l00010">node.h:10</a></div></div>
+<div class="ttc" id="classcbuffer_html_ab547060c86ece8807d0a695939625434"><div class="ttname"><a href="classcbuffer.html#ab547060c86ece8807d0a695939625434">cbuffer::cbuffer</a></div><div class="ttdeci">cbuffer(int _app)</div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00033">cbuffer.h:33</a></div></div>
+<div class="ttc" id="classcbuffer_html_a6cf9c30f14e835822b5b46da0f1320c0"><div class="ttname"><a href="classcbuffer.html#a6cf9c30f14e835822b5b46da0f1320c0">cbuffer::end</a></div><div class="ttdeci">Iterator end() const </div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00298">cbuffer.h:298</a></div></div>
+<div class="ttc" id="struct_node_html"><div class="ttname"><a href="struct_node.html">Node</a></div><div class="ttdef"><b>Definition:</b> <a href="node_8h_source.html#l00008">node.h:8</a></div></div>
+<div class="ttc" id="classcbuffer_html_a123e48c72803bdeb90af2f3bf72c9970"><div class="ttname"><a href="classcbuffer.html#a123e48c72803bdeb90af2f3bf72c9970">cbuffer::_begin</a></div><div class="ttdeci">Node&lt; T &gt; * _begin</div><div class="ttdoc">Puntatore al nodo iniziale. </div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00306">cbuffer.h:306</a></div></div>
+<div class="ttc" id="classcbuffer_html"><div class="ttname"><a href="classcbuffer.html">cbuffer</a></div><div class="ttdef"><b>Definition:</b> <a href="cbuffer_8h_source.html#l00015">cbuffer.h:15</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generato Dom 7 Feb 2016 18:14:56 per Buffer circolare di elementi, Tollari Mattia 780878 da &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

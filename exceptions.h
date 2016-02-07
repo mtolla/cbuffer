@@ -16,24 +16,24 @@ class emptyBuffer : public std::runtime_error {
 
 /** Eccezione custom
 	Errore dimensione buffer */
-class Error_nEle : public std::runtime_error 
+class errorNEle : public std::runtime_error 
 {
 	public:
 	/** Costruttore che riceve un messaggio		
 		@param mes messaggio dell'errore */
-	Error_nEle(const char *mes) : std::runtime_error(mes) 
+	errorNEle(const char *mes) : std::runtime_error(mes) 
 	{
 	}	
 };
 
 /** Eccezione custom
 	Errore fuoriuscita dal buffer */
-class IndexOutOfBound : public std::runtime_error 
+class indexOutOfBound : public std::runtime_error 
 {
 	public:
 	/** Costruttore che riceve un messaggio		
 	@param mes messaggio dell'errore */
-	IndexOutOfBound(const char *mes) : std::runtime_error(mes) 
+	indexOutOfBound(const char *mes) : std::runtime_error(mes) 
 	{
 	}	
 };

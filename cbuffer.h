@@ -57,17 +57,17 @@ template <typename T> class cbuffer
 		@param oth nodo che viene copiato */
 	cbuffer(const cbuffer &oth)
 	{
-		_begin = new Node<T>(oth->value.value());
-		_end = _begin;
+		_begin = new Node<T>(oth._begin->value.value());
 		Node<T> *_app = _begin;
-		Node<T> *_app2 = oth->_begin->next;
+		Node<T> *_app2 = oth._begin->next;
 		for (int i = 1; i <= _dim; i++)
 		{
-			_app->next = new Node<T>(_app2.value());
+			_app->next = new Node<T>(_app2->value.value());
 			_app = _app->next;
 			_app2 = _app2->next;
 		}
 		_app->next = _begin;
+		_end = _app;
 		
 	}
 	
@@ -78,7 +78,7 @@ template <typename T> class cbuffer
 	{
 		if(this != &oth) 
 		{
-			cbuffer _app(oth);
+			cbuffer<T> _app(oth);
 			
 			std::swap(this->_begin, _app._begin);
 			std::swap(this->_end, _app._end);
@@ -106,13 +106,13 @@ template <typename T> class cbuffer
 			return _app->value.value();
 		}
 		else 
-			throw IndexOutOfBound("Error: Index out of bound.");
+			throw indexOutOfBound("Error: Index out of bound.");
 	}
 	
 	/** Operatore di indirizamento costante richiesto dal progetto.
 		@param _index indice del nodo
 		@return reference richiesto costante
-		@throw IndexOutOfBound errorein caso di uscita dal buffer */
+		@throw indexOutOfBound errorein caso di uscita dal buffer */
 	const T &operator[](const int _index) const 
 	{
 		if(_index < _nEle) 
@@ -127,7 +127,7 @@ template <typename T> class cbuffer
 			return _app->value.value();
 		}
 		else 
-			throw IndexOutOfBound("Error: Index out of bound.");
+			throw indexOutOfBound("Error: Index out of bound.");
 	}
 	
 	/** Inserimento di un valore in coda
@@ -310,7 +310,7 @@ template <typename T> class cbuffer
 	
 	/** Metodo di creazione di un buffer a dimensione impostata
 		@param _app dimensione del buffer
-		@throw Error_nEle grandezza incorretta */
+		@throw errorNEle grandezza incorretta */
 	void create (int _dim)
 	{
 		if (_dim >=1)
@@ -326,7 +326,7 @@ template <typename T> class cbuffer
 			}
 			_app->next = _begin;
 		}
-		else throw Error_nEle("Error: The buffer size must be greather than 0");
+		else throw errorNEle("Error: The buffer size must be greather than 0");
 	}
 
 };
