@@ -89,12 +89,12 @@ void test()
 	check(buffer, vocali);
 	std::cout << std::endl;
 	
-	std::cout << "Creazione di un puntatore a char collegato al buffer: " << std::endl;
-	cbuffer<char> *nBuffer;
+	std::cout << "Creazione di un nuovo buffer: " << std::endl;
+	cbuffer<char> nBuffer;
 	std::cout << "nBuffer = buffer" << std::endl;
-	nBuffer = &buffer;
+	nBuffer = buffer;
 	std::cout << "nBuffer: ";
-	print_buffer(*nBuffer);
+	print_buffer(nBuffer);
 	
 	std::cout << "Eliminazione elementi: " << std::endl;
 	int _dim = buffer.dim();

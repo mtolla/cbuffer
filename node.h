@@ -16,6 +16,13 @@ template <typename T> struct Node
 		value = 0;
 		next = 0;
 	}
+	/** Costruttore che inizializza con valore passato 
+		@param _app valore che viene passato */
+	Node (const T &_app)
+	{
+		value = _app;
+		next = 0;
+	}
 	/** Distruttore */
 	~Node() 
 	{

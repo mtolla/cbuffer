@@ -57,9 +57,17 @@ template <typename T> class cbuffer
 		@param oth nodo che viene copiato */
 	cbuffer(const cbuffer &oth)
 	{
-		_begin = oth._begin;
-		_end = oth._end;
-		_dim = oth._dim;
+		_begin = new Node<T>(oth->value.value());
+		_end = _begin;
+		Node<T> *_app = _begin;
+		Node<T> *_app2 = oth->_begin->next;
+		for (int i = 1; i <= _dim; i++)
+		{
+			_app->next = new Node<T>(_app2.value());
+			_app = _app->next;
+			_app2 = _app2->next;
+		}
+		_app->next = _begin;
 		
 	}
 	
