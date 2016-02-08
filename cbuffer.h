@@ -109,7 +109,7 @@ template <typename T> class cbuffer
 			throw indexOutOfBound("Error: Index out of bound.");
 	}
 	
-	/** Operatore di indirizamento costante richiesto dal progetto.
+	/** Operatore di indirizzamento costante richiesto dal progetto.
 		@param _index indice del nodo
 		@return reference richiesto costante
 		@throw indexOutOfBound errorein caso di uscita dal buffer */

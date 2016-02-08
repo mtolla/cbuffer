@@ -10,7 +10,7 @@ struct tVocali
 };
 
 template<typename T>
-void print_buffer(cbuffer<T> &buffer) 
+void printBuffer(cbuffer<T> &buffer) 
 {
 	std::cout << buffer << std::endl;
 	std::cout << "Numero elementi: " << buffer.nEle() << std::endl;
@@ -23,7 +23,7 @@ void test()
 	std::cout << "Creazione di un buffer di caratteri con grandezza fissata a 7: " << std::endl;
 	std::cout << "cbuffer<char> buffer(7): ";
 	cbuffer<char> buffer(7);
-	print_buffer(buffer);
+	printBuffer(buffer);
 	std::cout << "Stampa del buffer: "<<std::endl;
 	std::cout << "Cattura eccezione: cbuffer<char> bufferError(0)" << std::endl;
 	try 
@@ -94,14 +94,14 @@ void test()
 	std::cout << "nBuffer = buffer" << std::endl;
 	nBuffer = buffer;
 	std::cout << "nBuffer: ";
-	print_buffer(nBuffer);
+	printBuffer(nBuffer);
 	
 	std::cout << "Eliminazione elementi: " << std::endl;
 	int _dim = buffer.dim();
 	for(int i = 0; i < _dim; i++) {
 		std::cout << "buffer.del()" << std::endl;
 		buffer.del();
-		print_buffer(buffer);
+		printBuffer(buffer);
 	}
 	std::cout << "Test cattura eccezione, da buffer vuoto: buffer.del()" << std::endl;
 	try {
